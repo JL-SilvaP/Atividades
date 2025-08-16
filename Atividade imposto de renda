@@ -1,30 +1,41 @@
 #include <stdio.h>
 
-void calculo_imc(float *peso, float *imc, float *altura){
-    printf("Digite sua altura para calcular seu imc:\n");
-    scanf("%f", altura);
-    printf("Digite seu peso para calcular seu imc:\n");
-    scanf("%f", peso);
-    *imc = *peso/(*altura * *altura);
+void dinheiro(float *salario) {
+    printf("Digite seu salario: \n");
+    scanf("%f", salario);
 }
 
-int main(){
-    float peso, imc, altura;
-    calculo_imc(&peso, &imc, &altura);
-    
-    if(imc < 18.5){
-    printf("seu imc é de %.1f, estando na classificao da magreza", imc);
+void tabela() {
+    printf("Segue tabela de imposto de renda:\n");
+    printf("Salarios até 2.259,20 são isentos de imposto de renda\n");
+    printf("Salarios de 2.259,21 até 2.826,65 recebem uma dedução de 7,5%%\n");
+    printf("Salarios de 2.826,66 até 3.751,05 recebem uma dedução de 15%%\n");
+    printf("Salarios de 3.751,06 até 4.664,68 recebem uma dedução de 22,5%%\n");
+    printf("Salarios acima de 4.664,68 recebem uma dedução de 27,5%%\n\n");
+}
+
+int main() {
+    float salario;
+    float novo_salario;
+
+    tabela();
+    dinheiro(&salario);  
+
+    if (salario <= 2259.20){
+        printf("Salario continua o mesmo: %.2f\n", salario);       
+    } else if (salario <= 2826.65){
+        novo_salario = salario * (1 - 0.075);
+        printf("Novo Salario com dedução de 7.5%%: %.2f\n", novo_salario);
+    } else if(salario <= 3751.05){
+        novo_salario = salario * (1 - 0.15);
+        printf("Novo Salario com dedução de 15%%: %.2f\n", novo_salario);
+    } else if(salario <= 4664.68){
+        novo_salario = salario * (1 - 0.225);
+        printf("Novo Salario com dedução de 22.5%%: %.2f\n", novo_salario);
+    } else {
+        novo_salario = salario * (1 - 0.275);
+        printf("Novo Salario com dedução de 27.5%%: %.2f\n", novo_salario);
     }
-    else if(imc < 24.9){
-    printf("seu imc é de %.1f, estando na classificao normal", imc);
-    }else if(imc < 29.9){
-    printf("seu imc é de %.1f, estando na classificao de sobrepeso", imc);
-    }else if(imc < 34.9){
-    printf("seu imc é de %.1f, estando na classificao de obesidade grau 1", imc);
-    }else if(imc < 39.9){
-    printf("seu imc é de %.1f, estando na classificao da obesidade grau 2", imc);
-    }else{
-    printf("seu imc é de %.1f, estando na classificao de obesidade grau 3", imc);
-    }
-    
+
+    return 0;
 }
