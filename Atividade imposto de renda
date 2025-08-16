@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void calculo_imc(float *peso, float *imc, float *altura){
+    printf("Digite sua altura para calcular seu imc:\n");
+    scanf("%f", altura);
+    printf("Digite seu peso para calcular seu imc:\n");
+    scanf("%f", peso);
+    *imc = *peso/(*altura * *altura);
+}
+
+int main(){
+    float peso, imc, altura;
+    calculo_imc(&peso, &imc, &altura);
+    
+    if(imc < 18.5){
+    printf("seu imc é de %.1f, estando na classificao da magreza", imc);
+    }
+    else if(imc < 24.9){
+    printf("seu imc é de %.1f, estando na classificao normal", imc);
+    }else if(imc < 29.9){
+    printf("seu imc é de %.1f, estando na classificao de sobrepeso", imc);
+    }else if(imc < 34.9){
+    printf("seu imc é de %.1f, estando na classificao de obesidade grau 1", imc);
+    }else if(imc < 39.9){
+    printf("seu imc é de %.1f, estando na classificao da obesidade grau 2", imc);
+    }else{
+    printf("seu imc é de %.1f, estando na classificao de obesidade grau 3", imc);
+    }
+    
+}
