@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define aluno 2
+#define aluno 30
 
 void digitar_notas(float nota1[aluno], float nota2[aluno], float media[aluno], float *media_turma) {
     int i;
