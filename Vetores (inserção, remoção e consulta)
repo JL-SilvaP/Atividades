@@ -1,0 +1,122 @@
+#include <stdio.h>
+
+#define TAM 50
+
+void criar_vetor(int vet[], int *valor_digitado) {
+    int i;
+    printf("Digite o número de elementos:\n");
+    scanf("%d", valor_digitado);
+    printf("Digite os elementos:\n");
+    for (i = 0; i < *valor_digitado; i++) {
+        printf("Elemento %d: ", i + 1);
+        scanf("%d", &vet[i]);
+    }
+}
+
+void bubble_sort(int vet[], int n) {
+    int i, j, temp;
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) {
+            if (vet[j] > vet[j + 1]) {
+                temp = vet[j];
+                vet[j] = vet[j + 1];
+                vet[j + 1] = temp;
+            }
+        }
+    }
+}
+
+void inserir_ordenado(int vet[], int *n) {
+    if (*n >= TAM) {
+        printf("Erro: vetor cheio. Não é possível inserir mais elementos.\n");
+        return;
+    }
+
+    int valor;
+    printf("Digite o valor a ser inserido:\n");
+    scanf("%d", &valor);
+
+    int i = *n - 1;
+
+    while (i >= 0 && vet[i] > valor) {
+        vet[i + 1] = vet[i];
+        i--;
+    }
+
+    vet[i + 1] = valor;
+    (*n)++;
+}
+
+void eliminar_elemento_vetor(int vet[], int *n) {
+    if (*n == 0) {
+        printf("O vetor está vazio. Nada a remover.\n");
+        return;
+    }
+
+    int valor, i, pos = -1;
+    printf("Digite o valor a ser removido:\n");
+    scanf("%d", &valor);
+
+    for (i = 0; i < *n; i++) {
+        if (vet[i] == valor) {
+            pos = i;
+            break;
+        }
+    }
+
+    if (pos == -1) {
+        printf("Valor não encontrado no vetor.\n");
+        return;
+    }
+
+    for (i = pos; i < *n - 1; i++) {
+        vet[i] = vet[i + 1];
+    }
+
+    (*n)--;
+    printf("Valor %d removido com sucesso.\n", valor);
+}
+
+void imprimir_vetor(int vet[], int n) {
+    printf("Vetor:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int vet[TAM], valor_digitado = 0, casos;
+
+    criar_vetor(vet, &valor_digitado);
+    bubble_sort(vet, valor_digitado);
+
+    while (1) {
+        printf("\nMenu:\n");
+        printf("1 - Adicionar um elemento ao vetor\n");
+        printf("2 - Mostrar o vetor\n");
+        printf("3 - Remover um elemento do vetor\n");
+        printf("4 - Encerrar\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &casos);
+
+        switch (casos) {
+            case 1:
+                inserir_ordenado(vet, &valor_digitado);
+                break;
+            case 2:
+                imprimir_vetor(vet, valor_digitado);
+                break;
+            case 3:
+                eliminar_elemento_vetor(vet, &valor_digitado);
+                break;
+            case 4:
+                printf("Obrigado por usar!\n");
+                return 0;
+            default:
+                printf("Por favor, digite uma opção válida.\n");
+        }
+    }
+
+    return 0;
+}
