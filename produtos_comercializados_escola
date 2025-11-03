@@ -1,0 +1,87 @@
+#include <stdio.h>  
+#define nome_produto 100
+#define registros 40
+
+typedef Produto{
+char produto[nome_produto];
+double valor;
+int estoque, codigo[registros];
+};
+
+//obs1:Fazer o for para ver se o número inteiro de produtos foram registrados
+void cadastrar_produto(struct Produto p){
+int i;
+for(i=0; i < registros; i++){
+}
+}
+
+//obs1:Utilizar ponteiro para alterar o valor do produto
+void alterar_valor(struct Produto p){
+}
+
+//obs1:for passando pelos códigos do produto para verificar eles, apenas mostrando as quantidades registradas
+void quantidade_estoque(struct Produto p){
+}
+
+//obs1:se o produto tiver estoque zero, avisar o usuario
+//obs2:se a quantidade desejada for inferior a existente, o programa deve zerar o estoque, e falar o valor a ser pago
+//obs3:a quantidade de dinhiero mostrado pelo usuario vai ser o valor passado por ponteiro pelo usuario vezes a quantiedade de itens comprados por ele
+void vendas_produto(struct Produto p, int *quantidade_usuario){
+}
+
+//utlizar ponteiros para atualizar o estoque do produto
+void atualizar_estoque(struct Produto p){
+}
+
+//printar os detalhes de cada produto passando por um for
+void exibir_codigo(struct Produto p){
+}
+
+//utilizar um for para passar pelos codigos, fazer uma verificacao para ber se o estoque é 0, se o estoque for zero printar todos os detalhes do produto
+void exibir_produto_estoquezero(struct Produto p){
+}
+
+int main()
+{
+struct Produto p;
+int opcao;
+
+do{
+printf("Digite 1 para cadastrar um novo produto\n");
+printf("Digite 2 para alterar o valor de um produto\n");    
+printf("Digite 3 para ver a quantidade de estoques\n");    
+printf("Digite 4 para vender uma quantidade do produto\n");
+printf("Digite 5 para atualizar o estoque do produto\n");    
+printf("Digite 6 exibir a descricao e o codigo do produto\n");    
+printf("Digite 7 para exibir os produtos com estoque zerado\n");    
+
+    
+switch (opcao){
+case 1:
+cadastrar_produto(p);
+
+case 2:
+alterar_valor(p);
+
+case 3:
+quantidade_estoque(p);
+
+case 4:
+vendas_produto(p, &quantidade_usuario);
+
+case 5:
+atualizar_estoque(p);
+
+case 6:
+exibir_codigo(p);
+
+case 7:
+exibir_produto_estoquezero(p);
+
+}   
+ 
+}while(opcao !=0);
+
+
+    return 0;
+}
