@@ -55,9 +55,9 @@ printf("Digite 3 para ver a quantidade de estoques\n");
 printf("Digite 4 para vender uma quantidade do produto\n");
 printf("Digite 5 para atualizar o estoque do produto\n");    
 printf("Digite 6 exibir a descricao e o codigo do produto\n");    
-printf("Digite 7 para exibir os produtos com estoque zerado\n");    
+printf("Digite 7 para exibir os produtos com estoque zerado\n"); 
+scanf("%d", &opcao);
 
-    
 switch (opcao){
 case 1:
 cadastrar_produto(p);
