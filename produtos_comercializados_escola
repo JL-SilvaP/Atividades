@@ -1,9 +1,11 @@
 #include <stdio.h>  
 #define nome_produto 100
 #define registros 40
+#define descr 300
+
 
 typedef Produto{
-char produto[nome_produto];
+char produto[nome_produto], descricao[descr];
 double valor;
 int estoque, codigo[registros];
 };
