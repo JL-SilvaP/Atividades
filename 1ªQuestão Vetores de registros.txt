@@ -1,1 +1,82 @@
+Acre
+120000
+300
+Alagoas
+450000
+1200
+Amapa
+150000
+400
+Amazonas
+600000
+2000
+Bahia
+2500000
+7500
+Ceara
+1800000
+5300
+Distrito Federal
+1100000
+2900
+Espirito Santo
+900000
+2400
+Goias
+1600000
+4100
+Maranhao
+800000
+2200
+Mato Grosso
+700000
+1800
+Mato Grosso do Sul
+650000
+1700
+Minas Gerais
+3200000
+7900
+Para
+1300000
+3600
+Paraiba
+500000
+1300
+Parana
+2700000
+6800
+Pernambuco
+1900000
+5600
+Piaui
+600000
+1500
+Rio de Janeiro
+3800000
+8200
+Rio Grande do Norte
+550000
+1400
+Rio Grande do Sul
+2900000
+7000
+Rondonia
+300000
+900
+Roraima
+200000
+500
+Santa Catarina
+2200000
+6400
+Sao Paulo
+9000000
+20000
+Sergipe
+400000
+1100
+Tocantins
+250000
+700
 
